@@ -50,12 +50,6 @@ if (! class_exists('Exopite_Simple_Options_Framework_Upload')) {
 
             if (strtoupper(sanitize_key($_POST['_method'])) == 'DELETE' && isset($_POST['qquuid'])) {
 
-                // بررسی اینکه آیا کاربر مجاز به حذف فایل است
-                if (!current_user_can('delete_others_posts')) {
-                    wp_send_json_error(__('شما اجازه حذف فایل ها را ندارید.', 'wpsh'));
-                    return;
-                }
-
                 /**
                  * Delete file on AJAX request with qquuid
                  *
